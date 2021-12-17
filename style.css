@@ -2,13 +2,16 @@ body {
   margin: 0;
   padding: 0;
 }
+
 main {
   width: fit-content;
   margin: auto;
 }
+
 #container {
   display: flex;
 }
+
 .ball {
   width: 60px;
   height: 60px;
@@ -16,6 +19,7 @@ main {
   border-radius: 50%;
   margin-right: 15px;
 }
+
 .selected {
   border: 3px solid black;
 }
