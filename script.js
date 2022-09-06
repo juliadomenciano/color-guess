@@ -20,22 +20,22 @@ function rgbText() {
 function reset() {
   generateColor();
   rgbText();
-  answer.innerHTML = 'Escolha uma cor';
+  answer.innerHTML = 'Choose a color';
   for (let i = 0; i < balls.length; i += 1) {
-    balls[i].style.border = '1px solid black';
+    balls[i].style.border = '5px solid rgba(0, 0, 0, 0.496)';
   }
 }
 function selectColor(event) {
   for (let i = 0; i < balls.length; i += 1) {
-    balls[i].style.border = '1px solid black';
+    balls[i].style.border = '5px solid rgba(0, 0, 0, 0.496)';
   }
-  event.target.style.border = '3px solid black';
+  event.target.style.border = '5px solid black';
   if (event.target.style.backgroundColor === p.innerHTML) {
-    answer.innerHTML = 'Acertou!';
+    answer.innerHTML = 'You Won!';
     const result = parseInt(placar.innerText) + 3;
     placar.innerHTML = result;
   } else {
-    answer.innerHTML = 'Errou! Tente novamente!';
+    answer.innerHTML = 'You Lost! Try Again!';
     if (placar.innerHTML > '0') {
       const result = parseInt(placar.innerText) - 1;
       placar.innerHTML = result;
@@ -44,4 +44,4 @@ function selectColor(event) {
 }
 container.addEventListener('click', selectColor);
 resetButton.addEventListener('click', reset);
-window.onload = (generateColor(), rgbText(), answer.innerHTML = 'Escolha uma cor');
+window.onload = (generateColor(), rgbText(), answer.innerHTML = 'Choose a color');
